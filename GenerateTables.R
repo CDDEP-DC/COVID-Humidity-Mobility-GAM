@@ -4,151 +4,163 @@ library(sjlabelled)
 
 names(RegList) <- AllClusters
 
-HumCoef1 <- lapply(RegList, function(x) summary(x$gam_summer_combo)$p.table[1:3,])
-HumCoef2 <- lapply(RegList, function(x) summary(x$gam_spring_combo)$p.table[1:3,])
-HumCoef3 <- lapply(RegList, function(x) summary(x$gam_allyear_combo)$p.table[1:3,])
-HumCoef4 <- lapply(RegList, function(x) summary(x$gam_fall_combo)$p.table[1:3,])
-
 pl <- c(
   `(Intercept)` = "Intercept",
-	Humidity_ma_lag = 'Absolute Humidity (14-day Lag)',
-	Visits_ma_lag = 'Non-essential Visitations (14-day Lag)',
-	`s(as.numeric(Date))` = 'spline(time)',
-	NewCase = 'Daily Cases'
+	Humidity_ma_lag = paste0('Absolute Humidity (',LagTime,'-day Lag)'),
+	RetailRec_ma_lag_scaled = paste0('Retail and Recreation (',LagTime,'-day Lag)'),
+	GroceryPharmacy_ma_lag_scaled = paste0('Grocery Stores and Pharmacies (',LagTime,'-day Lag)'),
+	Parks_ma_lag_scaled = paste0('Parks (',LagTime,'-day Lag)'),
+	Transit_ma_lag_scaled = paste0('Transit Stations (',LagTime,'-day Lag)'),
+	Workplaces_ma_lag_scaled = paste0('Workplaces (',LagTime,'-day Lag)'),
+	Residential_ma_lag_scaled = paste0('Residential (',LagTime,'-day Lag)'),
+	ConfirmedCasesPC = 'Immunity Factor',
+	NewCase = 'Daily Cases',
 )
+terms_inc <-c('(Intercept)',
+	# 'ConfirmedCasesPC',
+	# 'NewCase_ma_lag',
+	"Humidity_ma_lag",
+	"RetailRec_ma_lag_scaled",
+	"GroceryPharmacy_ma_lag_scaled",
+	"Parks_ma_lag_scaled",
+	"Transit_ma_lag_scaled",
+	"Workplaces_ma_lag_scaled",
+	"Residential_ma_lag_scaled")
 
-mod_label <- c('Low 1','Low 2','Low 3','Mid 1','Mid 2','Mid 3','Mid 4','High 1','High 2','High 3')
+mod_label <- c('Low 1','Low 2','Mid 1','Mid 2','High 1','High 2')
 
 # Summer
-tab_model(
-	RegList[['Low 1']]$gam_summer_combo,
-	RegList[['Low 2']]$gam_summer_combo,
-	RegList[['Low 3']]$gam_summer_combo,
-	RegList[['Mid 1']]$gam_summer_combo,
-	RegList[['Mid 2']]$gam_summer_combo,
-	RegList[['Mid 3']]$gam_summer_combo,
-	RegList[['Mid 4']]$gam_summer_combo,
-	RegList[['High 1']]$gam_summer_combo,
-	RegList[['High 2']]$gam_summer_combo,	
-	RegList[['High 3']]$gam_summer_combo,
-	title = 'July to August',
+print(tab_model(
+	RegList[['Low 1']]$glm_beforeOct_fips,
+	RegList[['Low 2']]$glm_beforeOct_fips,
+	RegList[['Mid 1']]$glm_beforeOct_fips,
+	RegList[['Mid 2']]$glm_beforeOct_fips,
+	RegList[['High 1']]$glm_beforeOct_fips,
+	RegList[['High 2']]$glm_beforeOct_fips,
+	title = 'Before October',
 	transform = NULL,
   	digits = 3,
-  	p.style = "stars", 	
+  	p.style = "stars",
 	auto.label = FALSE,
 	dv.labels = mod_label,
 	pred.labels = pl, 
 	collapse.ci = TRUE,
-	terms = c('(Intercept)',"Humidity_ma_lag", "Visits_ma_lag",'s(as.numeric(Date))'),
-	file = 'output/JulyAug.html')
+	terms = terms_inc,
+	file = 'output/beforeOct.html'))
 
 # Spring
-tab_model(
-	RegList[['Low 1']]$gam_spring_combo,
-	RegList[['Low 2']]$gam_spring_combo,
-	RegList[['Low 3']]$gam_spring_combo,
-	RegList[['Mid 1']]$gam_spring_combo,
-	RegList[['Mid 2']]$gam_spring_combo,
-	RegList[['Mid 3']]$gam_spring_combo,
-	RegList[['Mid 4']]$gam_spring_combo,
-	RegList[['High 1']]$gam_spring_combo,
-	RegList[['High 2']]$gam_spring_combo,
-	RegList[['High 3']]$gam_spring_combo,
-	title = 'Before July',
+print(tab_model(
+	RegList[['Low 1']]$glm_afterOct_fips,
+	RegList[['Low 2']]$glm_afterOct_fips,
+	RegList[['Mid 1']]$glm_afterOct_fips,
+	RegList[['Mid 2']]$glm_afterOct_fips,
+	RegList[['High 1']]$glm_afterOct_fips,
+	RegList[['High 2']]$glm_afterOct_fips,
+	title = 'After October',
 	transform = NULL,
   	digits = 3,
-  	p.style = "stars", 	
+  	p.style = "stars",
 	auto.label = FALSE,
 	dv.labels = mod_label,
 	pred.labels = pl, 
 	collapse.ci = TRUE,
-	terms = c('(Intercept)',"Humidity_ma_lag", "Visits_ma_lag",'s(as.numeric(Date))'),
-	file = 'output/BeforeJuly.html')
-
-# Fall
-tab_model(
-	RegList[['Low 1']]$gam_fall_combo,
-	RegList[['Low 2']]$gam_fall_combo,
-	RegList[['Low 3']]$gam_fall_combo,
-	RegList[['Mid 1']]$gam_fall_combo,
-	RegList[['Mid 2']]$gam_fall_combo,
-	RegList[['Mid 3']]$gam_fall_combo,
-	RegList[['Mid 4']]$gam_fall_combo,
-	RegList[['High 1']]$gam_fall_combo,
-	RegList[['High 2']]$gam_fall_combo,
-	RegList[['High 3']]$gam_fall_combo, 
-	title = 'After August',
-	transform = NULL,
-  	digits = 3,
-  	p.style = "stars", 	
-	auto.label = FALSE,
-	dv.labels = mod_label,
-	pred.labels = pl, 
-	collapse.ci = TRUE,
-	terms = c('(Intercept)',"Humidity_ma_lag", "Visits_ma_lag",'s(as.numeric(Date))'),
-	file = 'output/AfterAugust.html')
+	terms = terms_inc,
+	file = 'output/afterOct.html'))
 
 # Entire Year
-tab_model(
-	RegList[['Low 1']]$gam_allyear_combo,
-	RegList[['Low 2']]$gam_allyear_combo,
-	RegList[['Low 3']]$gam_allyear_combo,
-	RegList[['Mid 1']]$gam_allyear_combo,
-	RegList[['Mid 2']]$gam_allyear_combo,
-	RegList[['Mid 3']]$gam_allyear_combo,
-	RegList[['Mid 4']]$gam_allyear_combo,
-	RegList[['High 1']]$gam_allyear_combo,
-	RegList[['High 2']]$gam_allyear_combo,
-	RegList[['High 3']]$gam_allyear_combo, 
+print(tab_model(
+	RegList[['Low 1']]$glm_allyear_fips,
+	RegList[['Low 2']]$glm_allyear_fips,
+	RegList[['Mid 1']]$glm_allyear_fips,
+	RegList[['Mid 2']]$glm_allyear_fips,
+	RegList[['High 1']]$glm_allyear_fips,
+	RegList[['High 2']]$glm_allyear_fips,
 	title = 'Entire Duration',
-	transform = NULL,
+	# transform = NULL,
   	digits = 3,
   	p.style = "stars", 	
 	auto.label = FALSE,
 	dv.labels = mod_label,
 	pred.labels = pl, 
 	collapse.ci = TRUE,
-	terms = c('(Intercept)',"Humidity_ma_lag", "Visits_ma_lag",'s(as.numeric(Date))'),
-	file = 'output/AllYear.html')
+	terms = terms_inc,
+	file = 'output/AllYear.html'))
 
-clappendix <- c(
-	'Both (March-Nov)',
-	'Absolute Humidity Model (March-Nov)',
-	'Non-essential Visitations (March-Nov)',
-	'Both (March-June)',
-	'Absolute Humidity Model (March-June)', 
-	'Non-essential Visitations (March-June)',
-	'Both (July-Aug)',
-	'Absolute Humidity Model (July-Aug)', 
-	'Non-essential Visitations (July-Aug)',
-	'Both (Sept-Nov)',
-	'Absolute Humidity Model (Sept-Nov)', 
-	'Non-essential Visitations (Sept-Nov)'
+
+# Robust checks
+clappendix2 <- c(
+	'All',
+	'Absolute Humidity',
+	'Retail and Rec',
+	'Grocery and Pharmacy',
+	'Parks',
+	'Transit',
+	'Workplaces',
+	'Residential'
 	)
 
-# appendix
-lapply(mod_label, function (x){
-	tab_model(
-		RegList[[as.character(x)]]$gam_allyear_combo,
-		RegList[[as.character(x)]]$gam_allyear_humid,
-		RegList[[as.character(x)]]$gam_allyear_visit,
-		RegList[[as.character(x)]]$gam_spring_combo,
-		RegList[[as.character(x)]]$gam_spring_humid,
-		RegList[[as.character(x)]]$gam_spring_visit,
-		RegList[[as.character(x)]]$gam_summer_combo,
-		RegList[[as.character(x)]]$gam_summer_humid,
-		RegList[[as.character(x)]]$gam_summer_visit,
-		RegList[[as.character(x)]]$gam_fall_combo,
-		RegList[[as.character(x)]]$gam_fall_humid,
-		RegList[[as.character(x)]]$gam_fall_visit, 
-		title = as.character(x),
+for(x in mod_label) {	
+	print(tab_model(
+		RegList[[as.character(x)]]$glm_beforeOct_fips,
+		RegList[[as.character(x)]]$glm_beforeOct_humidfips,
+		RegList[[as.character(x)]]$glm_beforeOct_RetailRec,
+		RegList[[as.character(x)]]$glm_beforeOct_GroceryPharmacy,
+		RegList[[as.character(x)]]$glm_beforeOct_Parks,
+		RegList[[as.character(x)]]$glm_beforeOct_Transit,
+		RegList[[as.character(x)]]$glm_beforeOct_Workplaces,
+		RegList[[as.character(x)]]$glm_beforeOct_Residential,
+		title = paste(as.character(x),'Before October'),
 		transform = NULL,
 	  	digits = 3,
 	  	p.style = "stars", 	
 		auto.label = FALSE,
-		dv.labels = clappendix,
+		dv.labels = clappendix2,
 		pred.labels = pl, 
 		collapse.ci = TRUE,
-		terms = c('(Intercept)',"Humidity_ma_lag", "Visits_ma_lag",'s(as.numeric(Date))'),
-		file = paste0('output/',as.character(x),'.html'))
-})
+		terms = terms_inc,
+		file = paste0('output/BeforeOctMobility',as.character(x),'.html')))
+}
+
+for(x in mod_label) {	
+	print(tab_model(
+		RegList[[as.character(x)]]$glm_afterOct_fips,
+		RegList[[as.character(x)]]$glm_afterOct_humidfips,
+		RegList[[as.character(x)]]$glm_afterOct_RetailRec,
+		RegList[[as.character(x)]]$glm_afterOct_GroceryPharmacy,
+		RegList[[as.character(x)]]$glm_afterOct_Parks,
+		RegList[[as.character(x)]]$glm_afterOct_Transit,
+		RegList[[as.character(x)]]$glm_afterOct_Workplaces,
+		RegList[[as.character(x)]]$glm_afterOct_Residential,
+		title = paste(as.character(x),'After October'),
+		transform = NULL,
+	  	digits = 3,
+	  	p.style = "stars", 	
+		auto.label = FALSE,
+		dv.labels = clappendix2,
+		pred.labels = pl, 
+		collapse.ci = TRUE,
+		terms = terms_inc,
+		file = paste0('output/AfterOctMobility',as.character(x),'.html')))
+}
+
+for(x in mod_label) {	
+	print(tab_model(
+		RegList[[as.character(x)]]$glm_allyear_fips,
+		RegList[[as.character(x)]]$glm_allyear_humidfips,
+		RegList[[as.character(x)]]$glm_allyear_RetailRec,
+		RegList[[as.character(x)]]$glm_allyear_GroceryPharmacy,
+		RegList[[as.character(x)]]$glm_allyear_Parks,
+		RegList[[as.character(x)]]$glm_allyear_Transit,
+		RegList[[as.character(x)]]$glm_allyear_Workplaces,
+		RegList[[as.character(x)]]$glm_allyear_Residential,
+		title = paste(as.character(x),'All-year'),
+		transform = NULL,
+	  	digits = 3,
+	  	p.style = "stars", 	
+		auto.label = FALSE,
+		dv.labels = clappendix2,
+		pred.labels = pl, 
+		collapse.ci = TRUE,
+		terms = terms_inc,
+		file = paste0('output/AllYearMobility',as.character(x),'.html')))
+}

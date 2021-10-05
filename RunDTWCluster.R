@@ -34,7 +34,7 @@ require(doParallel)
 registerDoParallel(workers)
 
 # Load data from data directory
-setwd('~/../Dropbox/MobilityHumidity/GAMStudy/Manuscript/NatureMed/Code') # change directory
+setwd('~/../Dropbox/MobilityHumidity/GAMStudy/Manuscript/GitHub/COVID-Humidity-Mobility') # change directory
 AbsHumData <- fread('data/AbsoluteHumidity.csv')
 
 # Convert humidity data into lists of vectors 
@@ -54,15 +54,21 @@ NoHumidFIPS <- which(sapply(AbsHumList_ma,function(x) length(x)) < 10)
 AbsHumList_ma <- AbsHumList_ma[-NoHumidFIPS]
 
 # Perform Dynamic Time Warping Clustering
-HumCluster <- tsclust(AbsHumList_ma, type = "p", k = 10L,  distance = "dtw", seed = 999)
-
+HumCluster <- tsclust(AbsHumList_ma, type = "p", k = 18L,  distance = "dtw", seed = 999)
 
 # Create Data Frame to Store DTW results and write names
 FIPSList <- as.integer(names(AbsHumList_ma))
 Hum_df <- data.frame(FIPS=FIPSList)
 Hum_df$HumCluster <- HumCluster@cluster
 # Rank 
-Ranks <- c('Low 1','Low 2','Low 3','Mid 1','Mid 2','Mid 3','Mid 4','High 1','High 2','High 3')
+Ranks <- c(
+	'Low 1','Low 1','Low 1',
+	'Low 2','Low 2','Low 2', 
+	'Mid 1','Mid 1','Mid 1',
+	'Mid 2','Mid 2','Mid 2',
+	'High 1','High 1','High 1',
+	'High 2','High 2', 'High 2')
+
 AvgHumidity <- sapply(unique(Hum_df$HumCluster), function(x) {
 	fips <- Hum_df %>% filter(HumCluster == x) %>% select(FIPS)
 	avgHum <- median(unlist(AbsHumList_ma[as.character(fips[[1]])]))
@@ -81,18 +87,6 @@ mapdata <- county_map  %>%
 	mutate(fips = as.integer(id)) %>%
 	left_join(counties, by = 'fips')
 
-# Generate Map
-HumClusterMap <-  ggplot(data = mapdata, aes(x = long, y = lat, fill = ClusterRank, group = group)) + 
-	geom_polygon(color = "gray90", size = 0.05) + coord_equal() + 
-	scale_fill_fish(option = "Stethojulis_bandanensis", discrete = T, alpha = 0.8) + 
-	labs(fill = "Cluster") +  
-	theme_map() +  guides(fill = guide_legend(nrow = 1)) + 
-    theme(legend.position = "bottom",legend.title = element_text(face="bold"))
-
-# Print Map
-pdf('output/HumidityClusterMap.pdf', height = 8, width = 12)
-print(HumClusterMap)
-dev.off()
 
 # Write File mapping FIPS to cluster
 write.csv(counties %>% select(state, state_name, county, fips, ClusterRank) %>% na.omit(), 

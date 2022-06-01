@@ -8,7 +8,7 @@ library(RcppRoll)
 # Load data from data directory
 setwd('~/../Dropbox/MobilityHumidity/GAMStudy/Manuscript/GitHub/COVID-Humidity-Mobility') # change directory
 source('ProcessData.R') 
-cordata <- procdata %>% filter(ConfirmedCases > 20, NewCasePht >= 0, NewCasePht_ma >= 0, Population >= 50000)
+cordata <- procdata %>% filter(CumCases > 20, NewCasePht >= 0, NewCasePht_ma >= 0, Population >= 50000)
 
 # Correlation analysis
 cormat <- lapply(AllClusters, function(x){

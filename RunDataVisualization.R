@@ -19,7 +19,7 @@ source('ProcessData.R')
 # Build Plot Data
 Ranks <- c('Low 1','Low 2','Mid 1','Mid 2','High 1','High 2')
 plotdata <- procdata  %>% 
-	filter(ConfirmedCases > 20, NewCase >= 0, NewCase_ma >= 0, Population >= 50000, !is.na(ClusterRank), date < as_date('2021-03-01')) %>% 
+	filter(CumCases > 20, NewCase >= 0, NewCase_ma >= 0, Population >= 50000, !is.na(ClusterRank), date < as_date('2021-03-01')) %>% 
 	mutate(`New Cases per 100,000 people` = NewCasePht) %>% 
 	mutate(TimePeriod = case_when(
 		date < as_date('2020-10-01') ~'March 2020 to September 2020',

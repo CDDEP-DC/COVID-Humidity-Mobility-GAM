@@ -13,12 +13,12 @@ pl <- c(
 	Transit_ma_lag_scaled = paste0('Transit Stations (',LagTime,'-day Lag)'),
 	Workplaces_ma_lag_scaled = paste0('Workplaces (',LagTime,'-day Lag)'),
 	Residential_ma_lag_scaled = paste0('Residential (',LagTime,'-day Lag)'),
-	ConfirmedCasesPC = 'Immunity Factor',
-	NewCase = 'Daily Cases',
+	CumCasesPC = 'Immunity Factor',
+	NewCase = 'Daily Cases'
 )
 terms_inc <-c('(Intercept)',
-	# 'ConfirmedCasesPC',
-	# 'NewCase_ma_lag',
+	# 'CumCasesPC',
+	# 'NewCasePht_lag',
 	"Humidity_ma_lag",
 	"RetailRec_ma_lag_scaled",
 	"GroceryPharmacy_ma_lag_scaled",
@@ -28,6 +28,7 @@ terms_inc <-c('(Intercept)',
 	"Residential_ma_lag_scaled")
 
 mod_label <- c('Low 1','Low 2','Mid 1','Mid 2','High 1','High 2')
+
 
 # Summer
 print(tab_model(
@@ -76,7 +77,7 @@ print(tab_model(
 	RegList[['High 1']]$glm_allyear_fips,
 	RegList[['High 2']]$glm_allyear_fips,
 	title = 'Entire Duration',
-	# transform = NULL,
+	transform = NULL,
   	digits = 3,
   	p.style = "stars", 	
 	auto.label = FALSE,

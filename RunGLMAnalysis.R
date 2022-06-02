@@ -2,10 +2,7 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 library(lubridate)
-library(performance)
 
-# cl <- makeCluster(detectCores(), outfile="")
-# registerDoParallel(cl)
 set.seed(991)
 
 # Load data from data directory
@@ -115,22 +112,11 @@ RunGLMs <- function(i) {
 RegList <- lapply(1:length(AllClusters), function(i) {RunGLMs(i)})
 names(RegList) <- AllClusters
 
-# model_performance(RegList[['Low 1']]$glm_allyear_fips)
-# model_performance(RegList[['Low 2']]$glm_allyear_fips)
-# model_performance(RegList[['Mid 1']]$glm_allyear_fips)
-# model_performance(RegList[['Mid 2']]$glm_allyear_fips)
-# model_performance(RegList[['High 1']]$glm_allyear_fips)
-# model_performance(RegList[['High 2']]$glm_allyear_fips)
-
-# summary(RegList[['Low 1']]$glm_allyear_fips)
-# summary(RegList[['Low 2']]$glm_allyear_fips)
-# summary(RegList[['Mid 1']]$glm_allyear_fips)
-# summary(RegList[['Mid 2']]$glm_allyear_fips)
-# summary(RegList[['High 1']]$glm_allyear_fips)
-# summary(RegList[['High 2']]$glm_allyear_fips)
-
-# stopCluster(cl)
 # generate GLM output tables
 source('GenerateTables.R')
 
+# Calculate VIFs
 source('CalculateVIF.R')
+
+# Calculate McFadden R2
+source('CalculateR2.R')

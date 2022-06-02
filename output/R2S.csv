@@ -1,0 +1,145 @@
+"Model","Cluster","McFadden"
+"All (Mar 2020 - Sep 2020)","High 1",0.487300341490295
+"Absolute Humidity (Mar 2020 - Sep 2020)","High 1",0.433655950260655
+"Retail and Rec (Mar 2020 - Sep 2020)","High 1",0.434018306391305
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","High 1",0.435563311324831
+"Parks (Mar 2020 - Sep 2020)","High 1",0.434834572977358
+"Transit (Mar 2020 - Sep 2020)","High 1",0.437050326396575
+"Workplaces (Mar 2020 - Sep 2020)","High 1",0.43934807371579
+"Residential (Mar 2020 - Sep 2020)","High 1",0.435531285156463
+"All (Oct 2020 - Mar 2021)","High 1",0.397147402857796
+"Absolute Humidity (Oct 2020 - Mar 2021)","High 1",0.338577813676144
+"Retail and Rec (Oct 2020 - Mar 2021)","High 1",0.342101008591296
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","High 1",0.355933520669174
+"Parks (Oct 2020 - Mar 2021)","High 1",0.346396092273587
+"Transit (Oct 2020 - Mar 2021)","High 1",0.338581552659048
+"Workplaces (Oct 2020 - Mar 2021)","High 1",0.35951656220062
+"Residential (Oct 2020 - Mar 2021)","High 1",0.348469501626926
+"All (Entire Year)","High 1",0.382470330875909
+"Absolute Humidity (Entire Year)","High 1",0.263645443668378
+"Retail and Rec (Entire Year)","High 1",0.276728074463778
+"Grocery and Pharmacy (Entire Year)","High 1",0.267042309327082
+"Parks (Entire Year)","High 1",0.267122225284254
+"Transit (Entire Year)","High 1",0.264117332918001
+"Workplaces (Entire Year)","High 1",0.267780723363693
+"Residential (Entire Year)","High 1",0.265014752980284
+"All (Mar 2020 - Sep 2020)","High 2",0.495699082207027
+"Absolute Humidity (Mar 2020 - Sep 2020)","High 2",0.453445343297434
+"Retail and Rec (Mar 2020 - Sep 2020)","High 2",0.479847525682056
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","High 2",0.480006959781106
+"Parks (Mar 2020 - Sep 2020)","High 2",0.486287471691176
+"Transit (Mar 2020 - Sep 2020)","High 2",0.465665325536873
+"Workplaces (Mar 2020 - Sep 2020)","High 2",0.465876434054202
+"Residential (Mar 2020 - Sep 2020)","High 2",0.468056922013496
+"All (Oct 2020 - Mar 2021)","High 2",0.486016254494759
+"Absolute Humidity (Oct 2020 - Mar 2021)","High 2",0.414138844786938
+"Retail and Rec (Oct 2020 - Mar 2021)","High 2",0.415307022622033
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","High 2",0.427616569957681
+"Parks (Oct 2020 - Mar 2021)","High 2",0.427695137666285
+"Transit (Oct 2020 - Mar 2021)","High 2",0.414368149957497
+"Workplaces (Oct 2020 - Mar 2021)","High 2",0.426756201971576
+"Residential (Oct 2020 - Mar 2021)","High 2",0.424573965479934
+"All (Entire Year)","High 2",0.389671985441683
+"Absolute Humidity (Entire Year)","High 2",0.290373622222553
+"Retail and Rec (Entire Year)","High 2",0.301220147363042
+"Grocery and Pharmacy (Entire Year)","High 2",0.293848973814519
+"Parks (Entire Year)","High 2",0.294161036081857
+"Transit (Entire Year)","High 2",0.290528837848891
+"Workplaces (Entire Year)","High 2",0.290770508204098
+"Residential (Entire Year)","High 2",0.292791163028407
+"All (Mar 2020 - Sep 2020)","Low 1",0.528535950735234
+"Absolute Humidity (Mar 2020 - Sep 2020)","Low 1",0.460601813603143
+"Retail and Rec (Mar 2020 - Sep 2020)","Low 1",0.47048709319216
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","Low 1",0.463067442139167
+"Parks (Mar 2020 - Sep 2020)","Low 1",0.464283178470296
+"Transit (Mar 2020 - Sep 2020)","Low 1",0.461890533838732
+"Workplaces (Mar 2020 - Sep 2020)","Low 1",0.460700120904212
+"Residential (Mar 2020 - Sep 2020)","Low 1",0.465170698910965
+"All (Oct 2020 - Mar 2021)","Low 1",0.512427459866616
+"Absolute Humidity (Oct 2020 - Mar 2021)","Low 1",0.444330750792481
+"Retail and Rec (Oct 2020 - Mar 2021)","Low 1",0.448128479593374
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","Low 1",0.446316074498259
+"Parks (Oct 2020 - Mar 2021)","Low 1",0.472454942045862
+"Transit (Oct 2020 - Mar 2021)","Low 1",0.448827409824271
+"Workplaces (Oct 2020 - Mar 2021)","Low 1",0.462568210287974
+"Residential (Oct 2020 - Mar 2021)","Low 1",0.47474123621085
+"All (Entire Year)","Low 1",0.493992396952958
+"Absolute Humidity (Entire Year)","Low 1",0.424690704296562
+"Retail and Rec (Entire Year)","Low 1",0.444876325519566
+"Grocery and Pharmacy (Entire Year)","Low 1",0.426487766948152
+"Parks (Entire Year)","Low 1",0.424921848363606
+"Transit (Entire Year)","Low 1",0.429098302384453
+"Workplaces (Entire Year)","Low 1",0.428933199968151
+"Residential (Entire Year)","Low 1",0.439717148759986
+"All (Mar 2020 - Sep 2020)","Low 2",0.344286889897717
+"Absolute Humidity (Mar 2020 - Sep 2020)","Low 2",0.26632802812079
+"Retail and Rec (Mar 2020 - Sep 2020)","Low 2",0.285630433956378
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","Low 2",0.27805927152956
+"Parks (Mar 2020 - Sep 2020)","Low 2",0.272603269152924
+"Transit (Mar 2020 - Sep 2020)","Low 2",0.312307241735174
+"Workplaces (Mar 2020 - Sep 2020)","Low 2",0.297892624876588
+"Residential (Mar 2020 - Sep 2020)","Low 2",0.289924846662643
+"All (Oct 2020 - Mar 2021)","Low 2",0.494734705801402
+"Absolute Humidity (Oct 2020 - Mar 2021)","Low 2",0.399224447843425
+"Retail and Rec (Oct 2020 - Mar 2021)","Low 2",0.407188427476955
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","Low 2",0.434477014619321
+"Parks (Oct 2020 - Mar 2021)","Low 2",0.401275575527473
+"Transit (Oct 2020 - Mar 2021)","Low 2",0.399415062440646
+"Workplaces (Oct 2020 - Mar 2021)","Low 2",0.408212217055909
+"Residential (Oct 2020 - Mar 2021)","Low 2",0.414875986537181
+"All (Entire Year)","Low 2",0.395644190568497
+"Absolute Humidity (Entire Year)","Low 2",0.330680380630521
+"Retail and Rec (Entire Year)","Low 2",0.34902909788762
+"Grocery and Pharmacy (Entire Year)","Low 2",0.334002866522668
+"Parks (Entire Year)","Low 2",0.331021878652758
+"Transit (Entire Year)","Low 2",0.330871094062026
+"Workplaces (Entire Year)","Low 2",0.331679615757309
+"Residential (Entire Year)","Low 2",0.337731944593794
+"All (Mar 2020 - Sep 2020)","Mid 1",0.43587275656023
+"Absolute Humidity (Mar 2020 - Sep 2020)","Mid 1",0.374053026958205
+"Retail and Rec (Mar 2020 - Sep 2020)","Mid 1",0.376465213093848
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","Mid 1",0.380815171247113
+"Parks (Mar 2020 - Sep 2020)","Mid 1",0.374974791210133
+"Transit (Mar 2020 - Sep 2020)","Mid 1",0.374143847796716
+"Workplaces (Mar 2020 - Sep 2020)","Mid 1",0.374126718444716
+"Residential (Mar 2020 - Sep 2020)","Mid 1",0.374328002242282
+"All (Oct 2020 - Mar 2021)","Mid 1",0.470428593469818
+"Absolute Humidity (Oct 2020 - Mar 2021)","Mid 1",0.368026104681541
+"Retail and Rec (Oct 2020 - Mar 2021)","Mid 1",0.374782429443189
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","Mid 1",0.418068608468073
+"Parks (Oct 2020 - Mar 2021)","Mid 1",0.368292938684037
+"Transit (Oct 2020 - Mar 2021)","Mid 1",0.370599632036619
+"Workplaces (Oct 2020 - Mar 2021)","Mid 1",0.385270684550256
+"Residential (Oct 2020 - Mar 2021)","Mid 1",0.386832248886194
+"All (Entire Year)","Mid 1",0.465965041653686
+"Absolute Humidity (Entire Year)","Mid 1",0.389350362374604
+"Retail and Rec (Entire Year)","Mid 1",0.401202943520774
+"Grocery and Pharmacy (Entire Year)","Mid 1",0.398610215263933
+"Parks (Entire Year)","Mid 1",0.389417439694378
+"Transit (Entire Year)","Mid 1",0.389860527693103
+"Workplaces (Entire Year)","Mid 1",0.389351035245697
+"Residential (Entire Year)","Mid 1",0.391530333793712
+"All (Mar 2020 - Sep 2020)","Mid 2",0.404418567541079
+"Absolute Humidity (Mar 2020 - Sep 2020)","Mid 2",0.336493380608907
+"Retail and Rec (Mar 2020 - Sep 2020)","Mid 2",0.340643014661561
+"Grocery and Pharmacy (Mar 2020 - Sep 2020)","Mid 2",0.35173045112047
+"Parks (Mar 2020 - Sep 2020)","Mid 2",0.336630271639156
+"Transit (Mar 2020 - Sep 2020)","Mid 2",0.337220680420194
+"Workplaces (Mar 2020 - Sep 2020)","Mid 2",0.337492074205339
+"Residential (Mar 2020 - Sep 2020)","Mid 2",0.339475276600472
+"All (Oct 2020 - Mar 2021)","Mid 2",0.578950584921226
+"Absolute Humidity (Oct 2020 - Mar 2021)","Mid 2",0.51232344363965
+"Retail and Rec (Oct 2020 - Mar 2021)","Mid 2",0.512327120596111
+"Grocery and Pharmacy (Oct 2020 - Mar 2021)","Mid 2",0.533140509857525
+"Parks (Oct 2020 - Mar 2021)","Mid 2",0.512412893959878
+"Transit (Oct 2020 - Mar 2021)","Mid 2",0.514233097818772
+"Workplaces (Oct 2020 - Mar 2021)","Mid 2",0.533550618707615
+"Residential (Oct 2020 - Mar 2021)","Mid 2",0.532152835179452
+"All (Entire Year)","Mid 2",0.533884557583144
+"Absolute Humidity (Entire Year)","Mid 2",0.468544564619681
+"Retail and Rec (Entire Year)","Mid 2",0.47398320437169
+"Grocery and Pharmacy (Entire Year)","Mid 2",0.474504182105365
+"Parks (Entire Year)","Mid 2",0.46861131738941
+"Transit (Entire Year)","Mid 2",0.469429600886868
+"Workplaces (Entire Year)","Mid 2",0.468777246569522
+"Residential (Entire Year)","Mid 2",0.469997557888758
